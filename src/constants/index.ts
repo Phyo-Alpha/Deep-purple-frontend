@@ -10,6 +10,7 @@ import bugreport from "../assets/icons/bugReport.svg";
 import heart from "../assets/icons/heart.svg";
 import world from "../assets/icons/world.svg";
 import like from "../assets/icons/like.svg";
+import ai from "../assets/icons/ai.svg";
 
 
 export const sidebarLinks = [
@@ -59,6 +60,11 @@ export const sidebarLinks = [
         imgURL : subscription,
         route : "/subscription_plan/",
         label : "Subcription plans",
+    },
+    {
+        imgURL : ai,
+        route : "/aiplay",
+        label : "AI playground",
     },
 ]
 

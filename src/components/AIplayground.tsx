@@ -34,6 +34,7 @@ const AIplayground = () => {
     }
 
     function handleSubmit() {
+        setAnalysisData([]);
         getSentiment();
         getEmotion();
     }

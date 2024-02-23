@@ -27,7 +27,7 @@ const LeftSidebar = () => {
                     <img src={logo} alt="logo" width={50} height={36} />
                 </Link>
 
-                <ul className='flex flex-col gap-3'>
+                <ul className='flex flex-col gap-2'>
                     {currentUser === 'theoed' && sidebarLinks?.map((link: MyNavLink) => {
                         return (
                             <li key={link.label} className='rounded-full base-medium hover:bg-primary-500 transition'>

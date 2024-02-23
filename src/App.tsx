@@ -290,7 +290,7 @@ export default function App() {
                   <Route path='/Profile' element={<ProfilePage />} />
                   <Route path='/Profile/:displayOptions' element={<ProfilePage />} />
                   <Route path='/Profile/editProfile/:editUsername' element={<ProfilePage />} />
-                  <Route path='aiplay' element={<AIplayground />} />
+                  <Route path='/aiplay' element={<AIplayground />} />
                   <Route path='/test' element={<Test />} />
                   <Route path='/subscription' element={<Subscraption />} />
                   <Route path='/bugreports' element={<BugReportPage />} />
