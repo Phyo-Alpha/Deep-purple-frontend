@@ -43,7 +43,7 @@ export default function ReportBoardLeftSideBar() {
                             className="flex 
                                     items-center p-4"
                         >
-                            <img src="/src/assets/icons/setting.svg" alt="setting-icon"
+                            <img src="/assets/icons/setting.svg" alt="setting-icon"
                                 width={40}
                                 className="invert-white" />
                             <p>Setting</p>
