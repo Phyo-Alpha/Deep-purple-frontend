@@ -885,6 +885,8 @@ export async function getUserTypeByUserName(username : string) {
 
         if (!documents) throw Error;
         
+        if (!documents.documents[0]) return "Individual";
+        
         return documents.documents[0].account_type;
     }
     catch (error) {

@@ -22,7 +22,7 @@ const LeftSidebar = () => {
 
             const userType = await getUserTypeByUserName(user);
 
-            if (!userType) return;
+            if (!userType) setUserType('Individual');
 
             setUserType(userType);
         }
