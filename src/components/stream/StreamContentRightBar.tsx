@@ -87,7 +87,7 @@ export default function StreamContentRightBar({ addStream, onToggleDisplayRightB
                                         account.account_username)}
                                 >
                                     <ListItemIcon className='pr-5'>
-                                        <img src={'/src/assets/images/profile-placeholder.svg'} alt="profile" />
+                                        <img src={'assets/images/profile-placeholder.svg'} alt="profile" />
                                     </ListItemIcon>
                                     <ListItemText
                                         primary={<span className='text-dark-1 font-bold text-lg'>{account.account_username}</span>}
