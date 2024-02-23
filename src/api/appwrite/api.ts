@@ -874,3 +874,20 @@ export async function updateUserAccount(userId: string, user : any) {
     }
 
 }
+
+export async function getUserTypeByUserName(username : string) {
+    try {
+        const documents = await databases.listDocuments(
+            appwriteConfig.databaseId,
+            appwriteConfig.userAccountCollectionId,
+            [Query.equal("name", username)]
+        );
+
+        if (!documents) throw Error;
+        
+        return documents.documents[0].account_type;
+    }
+    catch (error) {
+        console.log(error);
+    }
+}

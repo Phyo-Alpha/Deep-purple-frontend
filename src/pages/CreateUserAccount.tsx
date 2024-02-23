@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { addUserAccount } from '../api/appwrite/api';
 import { Link } from 'react-router-dom';
+import { createNewUser } from '../context/AuthContext';
 
 export default function CreateUserAccount() {
   const [userDetails, setuserDetails] = useState({
@@ -13,6 +14,7 @@ export default function CreateUserAccount() {
   // Handle form input changes
   const handleChange = (e: any) => {
     const { name, value } = e.target;
+    console.log(name, value);
     setuserDetails((prevDetails) => ({ ...prevDetails, [name]: value }));
   };
 
@@ -21,6 +23,14 @@ export default function CreateUserAccount() {
     e.preventDefault();
     // Add logic to submit the form data
     console.log('Submitted:', userDetails);
+
+    const { name, email, password, account_type } = userDetails;
+    createNewUser({ username: name, password, email, account_type }).then(() => {
+      alert('User has been added to AWS cognito!');
+    }).catch((e) => {
+      console.log(e);
+    });
+
     addUserAccount(userDetails).then(() => {
       alert("User created!");
     });
@@ -90,7 +100,7 @@ export default function CreateUserAccount() {
                   name="name"
                   value={userDetails.name}
                   onChange={handleChange}
-                  className="border rounded-md px-4 py-2 w-full focus:outline-none focus:border-blue-500"
+                  className="text-dark-1 border rounded-md px-4 py-2 w-full focus:outline-none focus:border-blue-500"
                   required
                 />
               </div>
@@ -108,7 +118,7 @@ export default function CreateUserAccount() {
                   name="email"
                   value={userDetails.email}
                   onChange={handleChange}
-                  className="border rounded-md px-4 py-2 w-full focus:outline-none focus:border-blue-500"
+                  className="text-dark-1 border rounded-md px-4 py-2 w-full focus:outline-none focus:border-blue-500"
                   required
                 />
               </div>
@@ -140,7 +150,7 @@ export default function CreateUserAccount() {
                   Account type
                 </label>
                 <select
-                  className="border p-1"
+                  className="border p-1 text-dark-1"
                   value={userDetails.account_type}
                   name="account_type"
                   onChange={handleChange}
